@@ -57,7 +57,7 @@ var flow = {
                     "UtcEventDate": "2014-06-14T17:19:00."+all.env.index
             };
             return all;
-        }], post: 'http://127.0.0.1:8080/api/rest/messages' }
+        }], post: 'http://127.0.0.1:8080/api/rest/messages/queue' }
     ]
 };
 
