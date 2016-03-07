@@ -12,6 +12,12 @@ function makeWord()
 
     return text;
 }
+
+function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+
 var flow = {
 
     main: [
@@ -27,8 +33,8 @@ var flow = {
                     "SenderName": makeWord(),
                     "TaskKey":  j,
                     "TaskPriority": 4,
-                    "TaskUtcCreationDate": "2014-06-14T18:00:00."+all.env.index ,
-                    "TaskUtcDueDate": "2014-06-16T18:00:00.0000000"+all.env.index,
+                    "TaskUtcCreationDate": new Date(2016, 3, 1).toJSON() ,
+                    "TaskUtcDueDate": new Date().toJSON(),
                     "ActivityKey": "Activity1Key",
                     "ActivityName": "Activity1Desc",
                     "Metadata": [
@@ -54,7 +60,7 @@ var flow = {
                             "Value": makeWord()
                         }
                     ],
-                    "UtcEventDate": "2014-06-14T17:19:00."+all.env.index
+                    "UtcEventDate":randomDate(new Date(2016, 3, 1), new Date()).toJSON()
             };
             return all;
         }], post: 'http://127.0.0.1:8080/api/rest/messages/queue' }

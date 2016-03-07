@@ -23,7 +23,7 @@ import javax.jms.ObjectMessage;
         @ActivationConfigProperty(propertyName = "acknowledgeMode",
                 propertyValue = "Auto-acknowledge"),
         @ActivationConfigProperty(propertyName = "maxSession",
-                propertyValue = "2"),
+                propertyValue = "1"),
         @ActivationConfigProperty(propertyName = "DLQMaxResent",
                 propertyValue = "300")
 })
